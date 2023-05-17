@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+</head>
+<!--<form> 원격으로 데이터를 보낼때 씀-->
+
+<body>
+    <div>Forms</div>
+    <div>
+        <!--원격(본사)에 보내주는 역할을 하며, 업무(로그인)라고 알려줌/
+            지금은 값이 없어서 index.html을 활용하여 데이커가 제대로 날라갔는지 확인-->
+        <form action="index.html">
+            <!-- 글자를 넣을 수 있는 칸 생성/ 데이터를 구분하기 위해서 변수name-->
+            <div>
+                First Name : <input type="text" name="first">
+            </div>
+            <div>
+                Second Name : <input type="text" name="second">
+            </div>
+            <!-- 값을 제출하기 위한 칸 생성-->
+            <div>
+                <input type="submit">
+            </div>
+            <hr> <!-- <hr>은 구분자-->
+        </form>
+        <!-- 검색하는 창 만들기-->
+        <div>
+            <!--데이터가 날아가서 띄어주는 창이 main.html-->
+            <form action="main.html">
+                <!-- 날아가는 데이터값이 검색어-->
+                검색 : <input type="text" name="search">
+                <!-- 날아가게 해주는액션인 제출칸 생성-->
+                <div>
+                    <input type="submit">
+                </div>
+                <hr>
+                <div>
+                    <form action="index.html">
+                    </form>
+                </div>
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+    <hr>
+    <!-- HTML Input Types 알아보기-->
+    <form action="index.html">
+        <!-- email / @형식으로 입력해야함-->
+        <!-- value는 초기의 값임/ 해당 화면에 처음 보여지는 값-->
+        <div>
+            E-mail : <input type="email" name="myemail" value="rkqo457@naver.com">
+        </div>
+        <!--비밀번호 / 값을 입력할때는 값이 보이지 않음-->
+        <div>
+            Password : <input type="password" name="mypassword">
+        </div>
+        <!-- 날짜 입력 / 달력이 생성됨-->
+        <!-- value 값을 통해 초기의 값을 설정-->
+        <div>
+            Date : <input type="date" name="mydate" value="2023-05-16">
+        </div>
+        <!-- 파일 / 파일을 선택할 수 있는 칸 생성-->
+        <div>
+            File : <input type="file" name="myfile">
+        </div>
+        <!-- 값을 제출하기 위한 칸 생성-->
+        <div>
+            <input type="submit">
+        </div>
+    </form>
+    <hr>
+    <form action="index.html">
+
+        <!-- 체크박스/ 체크된 값만 원격으로 데이터가 넘어감 -->
+        <div>
+            <!--checked 수정하는 화면으로 올때 ex)회원정보를 수정할때-->
+            Check First : <input type="checkbox" name="mycheckfirst" checked>
+            Check second : <input type="checkbox" name="mychecksecond">
+            <!-- <Label> 체크박스를 체크할때 박스 외의 글자만 눌러도 체크되게 해줌 -->
+            <!-- id라는 속성을 통해서 label과 input의 연관이 있다는 표시를 해줌/ label for문과 input의 id값이 동일하게 표시해줌-->
+            <label for="idcheckthird"> Label Check Third :</label>
+            <input type="checkbox" name="mycheckthird" id="idcheckthird">
+        </div>
+        <!-- <hidden>은 개발자를 위한 명령어, 클라이언트한테는 안보여주지만(값만 있음) 원격에서 사용하려는 값-->
+        <div>
+            Hidden First : <input type="hidden" name="myhiddenfirst" value="2">
+        </div>
+        <!-- 값을 제출하기 위한 칸 생성-->
+        <div>
+            <input type="submit">
+        </div>
+    </form>
+    <div>
+        <hr> <!-- <hr>은 구분자-->
+        <!-- select-->
+        <form action="index.html">
+            <!-- 글자를 넣을 수 있는 칸 생성/ 데이터를 구분하기 위해서 변수name-->
+            <div>
+                First Name : <input type="text" name="first">
+            </div>
+            <!--textarea 화면에 보여지는 픽셀/ closing tag가 있음 그래서 값이 사이에 들어감, 입력할때 enter가 들어간다  -->
+            <div>
+                <div> Contents : </div>
+                <textarea name="mycontents" id="" cols="30" rows="10">입력하는 곳입니다.</textarea>
+            </div>
+            <!-- button/ sumbit과 기능이 동일-->
+            <div>
+                <input type="submit">
+                <button type="submit">Click Me!</button>
+                <button type="reset">원래대로 돌리기</button>
+            </div>
+            <div>
+                <!--select/ option을 통해서 보기를 생성-->
+                <label for="cars">Choose a car:</label>
+                <!-- 대/소문자를 구분하는게 좋지는 않음 url이 깨지기 때문에 value는 원격으로 가는 name
+                흰색글자는 클라이언트가 보는 글자-->
+                <select name="cars" id="cars">
+                    <option value="hyundai">Hyundai</option>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+        </form>
+        </form>
+        <hr>
+        <!-- radio name으로 구분해서 그룹으로 엮어서 이중에서 하나만 보내 
+        name이 다르게 되면 다른 그룹으로 인식 vlaue를 써줘야함  왜? 어떤 값을 선택하였는지 원격에서는 알지 못함(url에서 확인 불가) 멀티풀 안됨-->
+        <form action="index.html">
+            <div>
+                <div>
+                    <input type="radio" name="fruits" id="" value="apple"> 사과
+                    <input type="radio" name="fruits" id="" value="bananana"> 바나나
+                    <!-- input에서는 선택된 값은 checked-->
+                    <input type="radio" name="fruits" checked id="" value="strawberry"> 딸기
+                </div>
+                <!--select/ option을 통해서 보기를 생성-->
+                <label for="cars">Choose a car:</label>
+                <!-- 대/소문자를 구분하는게 좋음 url이 깨지기 때문에 value는 원격으로 가는 name
+                흰색글자는 클라이언트가 보는 글자-->
+                <select name="cars" id="cars">
+                    <option value="hyundai">Hyundai</option>
+                    <option value="volvo">Volvo</option>
+                    <!-- selected  수정하기 전에 예전에 선택해놓은 값을 지정해두는것 -->
+                    <option value="saab" selected>Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+                <div>
+                <!--multiple은 변수 하나에 값이 2개 이상이 날아갈수 있음(압축값)-->
+                <label for="cars">Choose a car(multiple):</label>
+             
+                <select name="cars" id="cars" multiple>
+                    <option value="hyundai">Hyundai</option>
+                    <option value="volvo">Volvo</option>
+                    <!-- selected  수정하기 전에 예전에 선택해놓은 값을 지정해두는것 -->
+                    <option value="saab" selected>Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+                </div>
+            </div>
+            <div>
+                <button type="submit">Click Me!</button>
+            </div>
+        </form>
+</body>
+</html>

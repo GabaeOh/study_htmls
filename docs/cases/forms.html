@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="../index.html">
+        <div>
+            First name <input type="text" name="firstname">
+        </div>
+        <div>
+            Last name <input type="text" name="lastname">
+        </div>
+        <div>
+            Email <input type="email" name="username" id="" placeholder="you@example.com">
+       
+        </div>
+        <div>
+            Address <input type="address" name="adress" id="" placeholder="1234 Main St">
+        </div>
+        <div>
+            Address 2 (Optical) <input type="address" name="adress2" id="" placeholder="Apartment or suite">
+        </div>
+        <div>
+            <label for="Country">Country:</label>
+            <select name="country" id="country">
+                <option value="" selected>Choosing...</option>
+                <option value="korea">Korea</option>
+                <option value="japan">Japan</option>
+                <option value="china">China</option>
+                <option value="india">India</option>
+                <option value="america">America</option>
+            </select>
+        </div>
+        <div>
+            <label for="State"> Stated:</label>
+            <select name="stated" id="stated">
+                <option value="" selected>Choosing...</option>
+                <option value="la">LA</option>
+                <option value="tokyo">Tokyo</option>
+                <option value="seoul">Seoul</option>
+                <option value="daegu">Daegu</option>
+                <option value="asan">Asan</option>
+            </select>
+        </div>
+        <div>
+            Zip <input type="file" name="myzip">
+        </div>
+        <hr>
+        <div>
+            <input type="checkbox" name="shippingaddressisthesameasmybillingaddress" id="shipping" >
+            <label for="shipping"> Shipping address is the same as mybilling address  </label>
+        </div>
+        <div>
+            <input type="checkbox" name="savethisinformationfornexttime" id="save" >
+            <label for="save"> Save this information for next time  </label>
+        </div>
+        <hr>
+        <div> Payment</div>
+        <div>
+            <input type="radio" name="payment" checked id="" value="creditcard"> Credit card
+        </div> 
+        <div>
+            <input type="radio" name="payment"  id="" value="debitcard"> Debit card
+        </div>
+        <div>
+            <input type="radio" name="payment"  id="" value="paypal"> Paypal
+        </div>
+        <div>
+            Name on card <input type="text" name="nameoncard">
+        </div>
+        <div>
+            Credit card number <input type="text" name="creditcardnumber">
+        </div>
+        <div>
+            Expiration Date <input type="date" name="expirationdate" value="----년--월">
+        </div>
+        <div>
+            CVV <input type="text" name="cvv" >
+        </div>
+        <div> 
+         <button type="submit">Continue to checkout</button>
+        </div>
+    </form>
+</body>
+</html>
